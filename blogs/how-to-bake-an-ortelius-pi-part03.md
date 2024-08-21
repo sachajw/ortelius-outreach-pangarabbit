@@ -245,6 +245,17 @@ kubectl port-forward svc/gimlet 9000:9000
 
 ![gimlet login](images/how-to-bake-an-ortelius-pi/part03/14-gimlet-login.png)
 
+- Or you will get screen like this to login with `admin key`
+
+![gimlet admin key login](images/how-to-bake-an-ortelius-pi/part03/35-gimlet-admin-ui.png)
+
+- For finding the admin key, type this command in the terminal
+
+```shell
+$ kubectl logs deploy/gimlet | grep "Admin auth key"
+time="2023-07-14T14:28:59Z" level=info msg="Admin auth key: 1c04722af2e830c319e590xxxxxxxx" file="[dashboard.go:55]"
+```
+
 #### Connect your repositories
 
 - Only import your application repositories here and not anything to do with infrastructure
